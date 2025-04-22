@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/dominando-kotlin.iml" filepath="$PROJECT_DIR$/dominando-kotlin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dominando-o-kotlin.iml" filepath="$PROJECT_DIR$/dominando-o-kotlin.iml" />
     </modules>
   </component>
 </project>
