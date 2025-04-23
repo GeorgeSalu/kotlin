@@ -11,7 +11,7 @@ class Account(number: String = "", owner: String = "") {
     }
 
     fun print() {
-        println("NUmber: $accountNumber; Owner: $accountOwner; Balance: $balance")
+        println("Number: $accountNumber; Owner: $accountOwner; Balance: $balance")
     }
 
 }
