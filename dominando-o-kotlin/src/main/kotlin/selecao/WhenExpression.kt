@@ -11,5 +11,5 @@ fun main() {
     }
 
     println(s)
-    
+
 }
