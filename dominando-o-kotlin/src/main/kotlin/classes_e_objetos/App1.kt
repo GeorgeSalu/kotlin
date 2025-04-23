@@ -8,6 +8,6 @@ fun main() {
     a1.deposit(2000.0)
     a2.deposit(150.0)
 
-    println(a1.print())
-    println(a2.print())
+    a1.print()
+    a2.print()
 }
