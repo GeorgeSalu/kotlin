@@ -13,16 +13,17 @@ fun main() {
 }
 
 fun espaco(str: String, maiusculo: Boolean = false) : String {
-    var r = ""
+    var sb = StringBuilder()
 
     for (c in str) {
-        r += "$c "
+        sb.append( "$c " )
     }
 
-    r = r.trim()
+    val r = sb.toString()
 
-    if (maiusculo) {
-       r = r.uppercase()
+    return if (maiusculo) {
+       r.uppercase()
+    } else {
+        r
     }
-    return r
 }
