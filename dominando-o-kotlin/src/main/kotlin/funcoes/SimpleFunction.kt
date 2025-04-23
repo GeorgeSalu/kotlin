@@ -7,7 +7,7 @@ fun main() {
     sayHello()
 }
 
-fun sayHello() {
+private fun sayHello() {
 
     println("Hello")
 }
