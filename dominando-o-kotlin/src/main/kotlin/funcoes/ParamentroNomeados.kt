@@ -1,7 +1,5 @@
 package funcoes
 
-import kotlin.math.exp
-
 fun main() {
 
     println(pow(3.0, 2 ))
