@@ -1,9 +1,7 @@
 package classes_e_objetos
 
-class Account(number: String = "", owner: String = "") {
+class Account(val accountNumber: String = "", val accountOwner: String = "") {
 
-    val accountNumber: String = number
-    val accountOwner: String = owner
     var balance: Double = 0.0
 
     fun deposit(amount: Double) {
