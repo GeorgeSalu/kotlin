@@ -1,0 +1,7 @@
+package heranca
+
+class Animal {
+
+
+
+}
