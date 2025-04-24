@@ -3,7 +3,7 @@ package classes_e_objetos
 /*
 * Exercicio
 *
-* Crie a classe CharGeneretor, capaz de gerar aleatoriamente um caracter dentro de um intervalo fornecido
+* Crie a classe CharGenerator, capaz de gerar aleatoriamente um caracter dentro de um intervalo fornecido
 * no momento da criação do objeto
 * */
 fun main() {
