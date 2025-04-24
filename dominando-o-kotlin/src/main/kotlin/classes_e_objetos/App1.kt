@@ -15,4 +15,7 @@ fun main() {
     a2.print()
     a3.print()
     a4.print()
+
+    a1.balance = a1.balance + 10000
+    a1.print()
 }
