@@ -9,6 +9,7 @@ fun main() {
 
     a1.deposit(2000.0)
     a2.deposit(150.0)
+    a4.deposit(2000)
 
     a1.print()
     a2.print()

@@ -19,6 +19,10 @@ class Account(
         balance += amount
     }
 
+    fun deposit(amount: Int) {
+        balance += amount
+    }
+
     fun print() {
         println("Number: $accountNumber; Owner: $accountOwner; Balance: $balance")
     }
