@@ -1,6 +1,6 @@
 package heranca
 
-open class Animal(
+abstract class Animal(
     val color: String
 ) {
 

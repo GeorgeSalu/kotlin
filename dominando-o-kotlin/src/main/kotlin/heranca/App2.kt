@@ -12,4 +12,6 @@ fun main() {
     dog.bark()
     dog.eat()
     println(dog.color)
+
+    var animal: Animal = dog
 }
