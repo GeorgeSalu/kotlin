@@ -3,8 +3,8 @@ package properties
 fun main() {
 
     val r1 = Rectangle(10,3)
-    r1.width = 10
     println(r1.width)
+    println(r1.height)
 
 }
 
