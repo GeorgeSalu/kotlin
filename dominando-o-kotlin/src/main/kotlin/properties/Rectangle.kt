@@ -2,13 +2,15 @@ package properties
 
 fun main() {
 
-    val r1 = Rectangle()
+    val r1 = Rectangle(10,3)
     r1.width = 10
     println(r1.width)
 
 }
 
-class Rectangle {
+class Rectangle(
+    width: Int, height: Int
+) {
 
     var width: Int = 0
         get() {
@@ -20,4 +22,11 @@ class Rectangle {
             }
         }
 
+
+    var height: Int = 0
+        set(value) {
+            if(value >= 0) {
+                field = value
+            }
+        }
 }
