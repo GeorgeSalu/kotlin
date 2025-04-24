@@ -1,8 +1,19 @@
 package classes_e_objetos
 
-class Account(val accountNumber: String = "", val accountOwner: String = "") {
+class Account(
+    val accountNumber: String,
+    val accountOwner: String
+) {
 
     var balance: Double = 0.0
+
+    constructor(): this(accountOwner = "", accountNumber = "") {
+        println("constructor()")
+    }
+
+    constructor(accountNumber: String,accountOwner: String,balance: Double): this(accountNumber, accountOwner) {
+        this.balance = balance
+    }
 
     fun deposit(amount: Double) {
         balance += amount
