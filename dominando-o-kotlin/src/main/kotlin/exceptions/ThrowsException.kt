@@ -5,9 +5,12 @@ fun main() {
     val account = BankAccount()
 
     try {
-        account.deposit(-500.0)
+        account.deposit(500.0)
+        account.withdraw(600.0)
     } catch (e: InvalidValueException) {
         println("Ops, invalid deposit: ${e.message}")
+    } catch (e: InsufficientFundsException) {
+        println("Error! current balance is ${e.currentBalance}")
     }
 
     println(account.balance)
@@ -26,6 +29,14 @@ class BankAccount() {
     }
 
     fun withdraw(value: Double) {
+        if (value < 0) {
+            throw InvalidValueException(value)
+        }
+
+        if(balance - value < 0) {
+            throw InsufficientFundsException(balance)
+        }
+
         balance -= value
     }
 }
