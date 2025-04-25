@@ -6,12 +6,15 @@ fun main() {
 
     try {
         account.deposit(500.0)
-        account.withdraw(600.0)
-    } catch (e: RuntimeException) {
-        println("Error: ${e.message}")
+        account.withdraw(100.0)
+    } catch (e: InvalidValueException) {
+        println("Ops, Invalid deposit: ${e.message}")
+    } catch (e: InsufficientFundsException) {
+        println("Error! Current balance is ${e.currentBalance}")
+    } finally {
+        println("Balance: ${account.balance}")
     }
 
-    println(account.balance)
 
 }
 
