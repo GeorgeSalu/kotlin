@@ -2,12 +2,23 @@ package polimorfismo
 
 fun main() {
 
-    val p = Programmer()
-    p.work()
+    val a: Programmer = Programmer()
+    a.work()
 
-    val t = Teacher()
-    t.work()
+    val b: KotlinProgrammer = KotlinProgrammer()
+    b.work()
 
+    var c: Programmer = KotlinProgrammer()
+    c.work()
+
+    c = Programmer()
+    c.work()
+
+    var d: Programmer = KotlinProgrammer()
+    var e: Programmer = Programmer()
+
+    d.work()
+    e.work()
 }
 
 abstract class Employee {
@@ -16,10 +27,18 @@ abstract class Employee {
 
 }
 
-class Programmer : Employee() {
+open class Programmer : Employee() {
 
     override fun work() {
         println("Programmer working...")
+    }
+
+}
+
+class KotlinProgrammer : Programmer() {
+
+    override fun work() {
+        println("Kotlin Programmer working...")
     }
 
 }
