@@ -17,9 +17,10 @@ class StudentGrades {
 
     fun add(grade: Double): StudentGrades {
 
-        if (grade !in 0.0..10.0 ) {
-            throw IllegalArgumentException("Invalid")
-        }
+        //if (grade !in 0.0..10.0 ) {
+        //    throw IllegalArgumentException("Invalid")
+        //}
+        require(grade !in 0.0..10.0) { "Grade $grade is not valid" }
 
         sum += grade
         numberOfGrades++
