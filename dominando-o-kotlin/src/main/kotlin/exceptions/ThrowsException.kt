@@ -4,7 +4,6 @@ fun main() {
 
     val account = BankAccount()
     account.deposit(-500.0)
-    //account.withdraw(100.0)
     println(account.balance)
 
 }
