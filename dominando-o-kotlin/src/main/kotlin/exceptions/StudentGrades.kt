@@ -2,13 +2,17 @@ package exceptions
 
 fun main() {
 
-    val avg = StudentGrades()
-        .add(3.0)
-        .add(5.5)
-        .add(7.0)
-        .average()
+    try {
+        val avg = StudentGrades()
+            .add(3.0)
+            .add(5.5)
+            .add(7.0)
+            .average()
 
-    println(avg)
+        println(avg)
+    } catch (e: Exception) {
+        println("Error: ${e.message}")
+    }
 }
 
 class StudentGrades {
