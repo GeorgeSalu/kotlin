@@ -3,7 +3,13 @@ package exceptions
 fun main() {
 
     val account = BankAccount()
-    account.deposit(-500.0)
+
+    try {
+        account.deposit(-500.0)
+    } catch (e: Exception) {
+        println("Ops, invalid deposit: ${e.message}")
+    }
+
     println(account.balance)
 
 }
