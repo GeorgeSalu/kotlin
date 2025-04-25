@@ -6,7 +6,7 @@ fun main() {
 
     try {
         account.deposit(-500.0)
-    } catch (e: Exception) {
+    } catch (e: InvalidValueException) {
         println("Ops, invalid deposit: ${e.message}")
     }
 
@@ -20,7 +20,7 @@ class BankAccount() {
 
     fun deposit(value: Double) {
         if (value < 0) {
-            throw Exception("value cannot be negative")
+            throw InvalidValueException(value)
         }
         balance += value
     }
