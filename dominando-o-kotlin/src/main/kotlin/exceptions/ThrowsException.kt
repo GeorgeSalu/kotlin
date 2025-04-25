@@ -8,9 +8,9 @@ fun main() {
         account.deposit(500.0)
         account.withdraw(600.0)
     } catch (e: InvalidValueException) {
-        println("Ops, invalid deposit: ${e.message}")
+        println("Ops, Invalid deposit: ${e.message}")
     } catch (e: InsufficientFundsException) {
-        println("Error! current balance is ${e.currentBalance}")
+        println("Error! Current balance is ${e.currentBalance}")
     }
 
     println(account.balance)
