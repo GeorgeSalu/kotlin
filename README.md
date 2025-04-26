@@ -1,5 +1,6 @@
 # Kotlin + Spring Boot
 
+O Kotlin é famoso pela forma como trata os valores nulos. Portanto isso não poderia ficar de fora: temas como safe calls, elvis operator e smart casts
 
 - Conhecer a fundo os fundamentos do Kotlin
 - Desenvolver programas simples e de média complexidade usando as melhores práticas da linguagem Kotlin
