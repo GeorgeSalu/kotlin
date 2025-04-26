@@ -8,10 +8,6 @@ fun main() {
     println(sum(*a))
 }
 
-fun subtraction(n1: Int,n2: Int): Int {
-    return n1 - n2
-}
-
 fun sum(vararg  values: Int): Int {
     var sum = 0
     values.forEach { sum += it }
