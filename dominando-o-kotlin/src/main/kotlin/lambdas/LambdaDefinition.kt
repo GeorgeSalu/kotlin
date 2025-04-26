@@ -2,7 +2,7 @@ package lambdas
 
 fun main() {
 
-    var r1 = sum(10, 5)
+    val r1 = sum(10, 5)
     println(r1)
 
     val f1 = fun (a: Int,b: Int): Int {
