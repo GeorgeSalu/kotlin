@@ -19,3 +19,6 @@ Você vai mergulhar de cabeça no mundo da programação orientada a objetos e d
 
 
 Na sequência, você vai dominar as coleções de dados do Kotlin: listas, conjuntos e mapas (mutáveis e imutáveis), além dos arrays. E, como não poderia deixar de ser, também vai aprender a integrar coleções com expressões lambda, nesse que é um dos recursos mais poderosos do Kotlin.
+
+
+E, pra fechar com chave de ouro, você ainda vai aprender tudo sobre gerenciamento de exceções em Kotlin e também sobre como deixar o seu código organizado.
