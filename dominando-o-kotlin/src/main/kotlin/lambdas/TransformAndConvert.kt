@@ -5,7 +5,7 @@ fun main() {
     val r1 = transformAndConvert("$", "|", 100, { v -> v * v })
     println(r1)
 
-    val r2 = transformAndConvert("$", "|", 4, { v -> -v })
+    val r2 = transformAndConvert("$", "|", 4) { v -> -v }
     println(r2)
 }
 
