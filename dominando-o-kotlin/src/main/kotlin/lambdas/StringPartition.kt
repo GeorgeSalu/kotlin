@@ -4,6 +4,5 @@ fun main() {
 
     val (f, s) = "aFGFKdsKKKpasTTsj".partition { it.isUpperCase() }
 
-    println("First: "+f)
-    println("Second: "+s)
+    println("First: $f Second: $s")
 }
