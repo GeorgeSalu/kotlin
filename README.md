@@ -15,3 +15,7 @@ Você vai mergulhar de cabeça no mundo da programação orientada a objetos e d
 - Polimorfismo
 - Funções
 - Expressões Lambda
+- Funções de Alta-Ordem (Higher-Order Functions)
+
+
+Na sequência, você vai dominar as coleções de dados do Kotlin: listas, conjuntos e mapas (mutáveis e imutáveis), além dos arrays. E, como não poderia deixar de ser, também vai aprender a integrar coleções com expressões lambda, nesse que é um dos recursos mais poderosos do Kotlin.
