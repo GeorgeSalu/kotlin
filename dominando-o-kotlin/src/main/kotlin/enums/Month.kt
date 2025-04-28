@@ -17,6 +17,8 @@ fun main() {
 
     val monthAugust = Month.valueOf("AUGUST")
     println(monthAugust)
+
+    println(month.getTotalDays())
 }
 
 enum class Month(val numberOfMonth: Int) {
@@ -37,6 +39,14 @@ enum class Month(val numberOfMonth: Int) {
         return Month.values()
                 .find { it.numberOfMonth == numberOfMonth+1 }
                 ?: Month.JANUARY
+    }
+
+    fun getTotalDays(): Int {
+        return when (this) {
+            JANUARY, MARCH, MAY, JULY, AUGUST, OCTOBER, DECEMBER -> 31
+            FEBRUARY -> 28
+            else -> 30
+        }
     }
 
     companion object {
