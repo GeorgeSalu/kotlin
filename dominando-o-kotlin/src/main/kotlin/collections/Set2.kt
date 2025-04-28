@@ -16,7 +16,7 @@ fun main() {
     println(dogs)
 }
 
-class Dog(private val name: String) {
+class Dog(val name: String) {
     override fun toString() = "Dog(name=$name, hashCode=${hashCode()})"
 
     override fun hashCode(): Int {
