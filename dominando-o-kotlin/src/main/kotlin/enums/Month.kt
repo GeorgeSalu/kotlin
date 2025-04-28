@@ -6,6 +6,12 @@ fun main() {
 
     println(month)
     println(month.numberOfMonth)
+    println(month.name)
+    println(month.ordinal)
+
+    var nextMonth = month.next()
+    println(nextMonth)
+
 }
 
 enum class Month(val numberOfMonth: Int) {
@@ -21,4 +27,11 @@ enum class Month(val numberOfMonth: Int) {
     OCTOBER(10),
     NOVEMBER(11),
     DECEMBER(12);
+
+    fun next(): Month {
+        return Month.values()
+                .find { it.numberOfMonth == numberOfMonth+1 }
+                ?: Month.JANUARY
+    }
+
 }
