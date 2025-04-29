@@ -1,4 +1,4 @@
-package OO_advanced
+package ooadvanced
 
 fun main() {
 
