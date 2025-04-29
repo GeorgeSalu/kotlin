@@ -1,6 +1,6 @@
 package organization.p1
 
-import c1
+import organization.p3.c1
 import organization.p2.b1
 
 fun main() {
