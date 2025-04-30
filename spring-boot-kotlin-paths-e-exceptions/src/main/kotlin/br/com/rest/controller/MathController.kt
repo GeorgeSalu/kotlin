@@ -15,6 +15,13 @@ class MathController {
         return convertToDouble(numberOne) + convertToDouble(numberTwo)
     }
 
+    @RequestMapping(value = ["/subtraction/{numberOne}/{numberTwo}"])
+    fun subtraction(@PathVariable(value = "numberOne") numberOne: String?, @PathVariable(value = "numberTwo") numberTwo: String?): Double {
+
+        if(!isNumeric(numberOne) || !isNumeric(numberTwo)) throw UnsupportedMathOperationException("Please set a numeric value")
+        return convertToDouble(numberOne) - convertToDouble(numberTwo)
+    }
+
     private fun convertToDouble(strNumber: String?): Double {
         if (strNumber.isNullOrBlank()) return 0.0
         val number = strNumber.replace(",".toRegex(), ".")
