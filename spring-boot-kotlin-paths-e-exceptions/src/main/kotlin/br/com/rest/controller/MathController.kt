@@ -43,6 +43,13 @@ class MathController {
         return (convertToDouble(numberOne) + convertToDouble(numberTwo)) / 2
     }
 
+    @RequestMapping(value = ["/squareRoot/{number}"])
+    fun squareRoot(@PathVariable(value = "number") number: String?): Double {
+
+        if(!isNumeric(number)) throw UnsupportedMathOperationException("Please set a numeric value")
+        return Math.sqrt(convertToDouble(number))
+    }
+
     private fun convertToDouble(strNumber: String?): Double {
         if (strNumber.isNullOrBlank()) return 0.0
         val number = strNumber.replace(",".toRegex(), ".")
