@@ -47,10 +47,10 @@ class PersonService {
     }
 
     fun delete(id: Long) {
-        var person = repository.findById(id)
+        var entity = repository.findById(id)
             .orElseThrow({ ResourceNotFoundException("no records found for this id")})
 
-        repository.delete(person)
+        repository.delete(entity)
     }
 
 
