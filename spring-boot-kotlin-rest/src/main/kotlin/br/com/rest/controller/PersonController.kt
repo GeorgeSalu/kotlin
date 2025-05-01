@@ -32,4 +32,9 @@ class PersonController {
         return service.create(person)
     }
 
+    @RequestMapping(method = [RequestMethod.PUT], produces = [MediaType.APPLICATION_JSON_VALUE], consumes = [MediaType.APPLICATION_JSON_VALUE])
+    fun update(@RequestBody person: Person) : Person {
+        return service.update(person)
+    }
+
 }

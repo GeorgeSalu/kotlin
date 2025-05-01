@@ -41,6 +41,10 @@ class PersonService {
         return person
     }
 
+    fun update(person: Person) : Person {
+        return person
+    }
+
     private fun mockPerson(i: Int): Person {
         val person = Person()
         person.id = counter.incrementAndGet()
