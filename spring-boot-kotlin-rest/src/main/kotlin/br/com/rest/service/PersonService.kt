@@ -4,6 +4,7 @@ import br.com.rest.data.vo.v1.PersonVO
 import br.com.rest.data.vo.v2.PersonVO as PersonVOV2
 import br.com.rest.exceptions.ResourceNotFoundException
 import br.com.rest.mapper.DozerMapper
+import br.com.rest.mapper.custom.PersonMapper
 import br.com.rest.model.Person
 import br.com.rest.repository.PersonRepository
 import org.springframework.beans.factory.annotation.Autowired
@@ -15,6 +16,9 @@ class PersonService {
 
     @Autowired
     private lateinit var repository: PersonRepository
+
+    @Autowired
+    private lateinit var mapper: PersonMapper
 
     private val logger = Logger.getLogger(PersonService::class.java.name)
 
@@ -40,8 +44,8 @@ class PersonService {
 
     fun createV2(person: PersonVOV2) : PersonVOV2 {
         logger.info("create one person")
-        var entity: Person  = DozerMapper.parseObject(person, Person::class.java)
-        return DozerMapper.parseObject(repository.save(entity), PersonVOV2::class.java)
+        var entity: Person  = mapper.mapVOToEntity(person)
+        return mapper.mapEntityToVO(repository.save(entity))
     }
 
     fun update(person: PersonVO) : PersonVO {
