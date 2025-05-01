@@ -21,4 +21,9 @@ class PersonController {
         return service.findById(id)
     }
 
+    @RequestMapping(method = [RequestMethod.GET], produces = [MediaType.APPLICATION_JSON_VALUE])
+    fun findAll() : List<Person> {
+        return service.findAll()
+    }
+
 }

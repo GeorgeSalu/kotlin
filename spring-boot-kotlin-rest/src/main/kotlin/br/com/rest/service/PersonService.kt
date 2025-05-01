@@ -24,4 +24,27 @@ class PersonService {
         return person
     }
 
+    fun findAll(): List<Person> {
+        logger.info("finding all person")
+
+        val persons: MutableList<Person> = ArrayList()
+
+        for(i in 0..7) {
+            val person = mockPerson(i)
+            persons.add(person)
+        }
+
+        return persons
+    }
+
+    private fun mockPerson(i: Int): Person {
+        val person = Person()
+        person.id = counter.incrementAndGet()
+        person.firstName = "Leandro $i"
+        person.lastName = "costa"
+        person.address = "minas gerais"
+        person.gender = "male"
+        return person
+    }
+
 }
