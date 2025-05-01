@@ -8,11 +8,11 @@ object DozerMapper {
 
     private val mapper: Mapper = DozerBeanMapperBuilder.buildDefault()
 
-    fun <O,D> paserObject(origin: O,destination: Class<D>?): D {
+    fun <O,D> parseObject(origin: O,destination: Class<D>?): D {
         return mapper.map(origin, destination)
     }
 
-    fun <O,D> paserListObjects(origin: List<O>,destination: Class<D>?): List<D> {
+    fun <O,D> parseListObjects(origin: List<O>,destination: Class<D>?): List<D> {
         val destinationObjects: ArrayList<D> = ArrayList()
         for(o in origin) {
             destinationObjects.add(mapper.map(o, destination))
