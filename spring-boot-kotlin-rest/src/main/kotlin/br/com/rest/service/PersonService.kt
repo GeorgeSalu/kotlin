@@ -7,7 +7,6 @@ import br.com.rest.model.Person
 import br.com.rest.repository.PersonRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
-import java.util.concurrent.atomic.AtomicLong
 import java.util.logging.Logger
 
 @Service
