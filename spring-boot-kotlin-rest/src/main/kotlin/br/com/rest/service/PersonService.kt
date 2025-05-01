@@ -12,6 +12,19 @@ class PersonService {
 
     private val logger = Logger.getLogger(PersonService::class.java.name)
 
+    fun findAll(): List<Person> {
+        logger.info("finding all person")
+
+        val persons: MutableList<Person> = ArrayList()
+
+        for(i in 0..7) {
+            val person = mockPerson(i)
+            persons.add(person)
+        }
+
+        return persons
+    }
+
     fun findById(id: Long): Person {
         logger.info("finding one person")
 
@@ -24,17 +37,8 @@ class PersonService {
         return person
     }
 
-    fun findAll(): List<Person> {
-        logger.info("finding all person")
-
-        val persons: MutableList<Person> = ArrayList()
-
-        for(i in 0..7) {
-            val person = mockPerson(i)
-            persons.add(person)
-        }
-
-        return persons
+    fun create(person: Person) : Person {
+        return person
     }
 
     private fun mockPerson(i: Int): Person {
