@@ -2,7 +2,6 @@ package br.com.rest.controller
 
 import br.com.rest.model.Person
 import br.com.rest.service.PersonService
-import org.apache.coyote.Response
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.MediaType
 import org.springframework.http.ResponseEntity
