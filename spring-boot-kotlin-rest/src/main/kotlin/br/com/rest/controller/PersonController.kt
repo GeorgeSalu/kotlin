@@ -1,6 +1,6 @@
 package br.com.rest.controller
 
-import br.com.rest.model.Person
+import br.com.rest.data.vo.v1.PersonVO
 import br.com.rest.service.PersonService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.MediaType
@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.PutMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RequestMethod
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
@@ -23,22 +22,22 @@ class PersonController {
     private lateinit var service: PersonService
 
     @GetMapping(produces = [MediaType.APPLICATION_JSON_VALUE])
-    fun findAll() : List<Person> {
+    fun findAll() : List<PersonVO> {
         return service.findAll()
     }
 
     @GetMapping(value = ["/{id}"], produces = [MediaType.APPLICATION_JSON_VALUE])
-    fun findById(@PathVariable(value = "id") id: Long) : Person {
+    fun findById(@PathVariable(value = "id") id: Long) : PersonVO {
         return service.findById(id)
     }
 
     @PostMapping(produces = [MediaType.APPLICATION_JSON_VALUE], consumes = [MediaType.APPLICATION_JSON_VALUE])
-    fun create(@RequestBody person: Person) : Person {
+    fun create(@RequestBody person: PersonVO) : PersonVO {
         return service.create(person)
     }
 
     @PutMapping(produces = [MediaType.APPLICATION_JSON_VALUE], consumes = [MediaType.APPLICATION_JSON_VALUE])
-    fun update(@RequestBody person: Person) : Person {
+    fun update(@RequestBody person: PersonVO) : PersonVO {
         return service.update(person)
     }
 
