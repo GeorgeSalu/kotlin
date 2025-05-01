@@ -2,8 +2,10 @@ package br.com.rest.controller
 
 import br.com.rest.model.Person
 import br.com.rest.service.PersonService
+import org.apache.coyote.Response
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.MediaType
+import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.DeleteMapping
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
@@ -42,8 +44,9 @@ class PersonController {
     }
 
     @DeleteMapping(value = ["/{id}"], produces = [MediaType.APPLICATION_JSON_VALUE])
-    fun delete(@PathVariable(value = "id") id: Long) {
-        return service.delete(id)
+    fun delete(@PathVariable(value = "id") id: Long) : ResponseEntity<*> {
+        service.delete(id)
+        return ResponseEntity.noContent().build<Any>()
     }
 
 }
