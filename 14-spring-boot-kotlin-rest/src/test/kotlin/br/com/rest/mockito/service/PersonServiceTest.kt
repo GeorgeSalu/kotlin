@@ -106,6 +106,10 @@ class PersonServiceTest {
 
     @Test
     fun delete() {
+        val entity = inputObject.mockEntity(1)
+
+        `when`(repository.findById(1)).thenReturn(Optional.of(entity))
+        service.delete(1)
     }
 
 }
