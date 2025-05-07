@@ -2,6 +2,7 @@ package br.com.rest.service
 
 import br.com.rest.controller.PersonController
 import br.com.rest.data.vo.v1.PersonVO
+import br.com.rest.exceptions.RequiredObjectIsNullException
 import br.com.rest.data.vo.v2.PersonVO as PersonVOV2
 import br.com.rest.exceptions.ResourceNotFoundException
 import br.com.rest.mapper.DozerMapper
@@ -46,7 +47,8 @@ class PersonService {
         return personVO
     }
 
-    fun create(person: PersonVO) : PersonVO {
+    fun create(person: PersonVO?) : PersonVO {
+        if (person == null) throw RequiredObjectIsNullException()
         logger.info("create one person")
         var entity: Person  = DozerMapper.parseObject(person, Person::class.java)
         val personVO: PersonVO = DozerMapper.parseObject(repository.save(entity), PersonVO::class.java)
