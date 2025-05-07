@@ -74,6 +74,18 @@ class PersonServiceTest {
     }
 
     @Test
+    fun updateWithNullPerson() {
+        val exception: Exception = assertThrows(
+            RequiredObjectIsNullException::class.java
+        ) { service.update(null) }
+
+        val expectedMessage = "It is not allowed to persist a null object"
+        val actualMessage = exception.message
+
+        assertTrue(actualMessage!!.contains(expectedMessage))
+    }
+
+    @Test
     fun create() {
         val entity = inputObject.mockEntity(1)
         val persisted = entity.copy()
