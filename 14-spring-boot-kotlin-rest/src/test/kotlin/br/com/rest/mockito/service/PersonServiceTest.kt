@@ -61,6 +61,24 @@ class PersonServiceTest {
 
     @Test
     fun create() {
+        val entity = inputObject.mockEntity(1)
+        val persisted = entity.copy()
+        persisted.id = 1
+
+        val vo = inputObject.mockVO(1)
+
+        `when`(repository.save(entity)).thenReturn(persisted)
+
+        val result = service.create(vo)
+
+        assertNotNull(result)
+        assertNotNull(result.key)
+        assertNotNull(result.links)
+        assertTrue(result.links.toString().contains("/api/person/v1/1"))
+        assertEquals("Address Test1", result.address)
+        assertEquals("First Name Test1", result.firstName)
+        assertEquals("Last Name Test1", result.lastName)
+        assertEquals("Female", result.gender)
     }
 
     @Test
