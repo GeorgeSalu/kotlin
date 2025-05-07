@@ -57,7 +57,8 @@ class PersonService {
         return personVO
     }
 
-    fun update(person: PersonVO) : PersonVO {
+    fun update(person: PersonVO?) : PersonVO {
+        if (person == null) throw RequiredObjectIsNullException()
         logger.info("update one person")
         var entity = repository.findById(person.key)
             .orElseThrow({ ResourceNotFoundException("no records found for this id")})
