@@ -53,6 +53,10 @@ class PersonServiceTest {
         assertNotNull(result.key)
         assertNotNull(result.links)
         assertTrue(result.links.toString().contains("/api/person/v1/1"))
+        assertEquals("Address Test1", result.address)
+        assertEquals("First Name Test1", result.firstName)
+        assertEquals("Last Name Test1", result.lastName)
+        assertEquals("Female", result.gender)
     }
 
     @Test
