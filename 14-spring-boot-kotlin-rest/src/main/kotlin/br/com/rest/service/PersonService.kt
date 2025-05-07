@@ -1,5 +1,6 @@
 package br.com.rest.service
 
+import br.com.rest.controller.PersonController
 import br.com.rest.data.vo.v1.PersonVO
 import br.com.rest.data.vo.v2.PersonVO as PersonVOV2
 import br.com.rest.exceptions.ResourceNotFoundException
@@ -8,6 +9,7 @@ import br.com.rest.mapper.custom.PersonMapper
 import br.com.rest.model.Person
 import br.com.rest.repository.PersonRepository
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo
 import org.springframework.stereotype.Service
 import java.util.logging.Logger
 
@@ -29,11 +31,14 @@ class PersonService {
     }
 
     fun findById(id: Long): PersonVO {
-        logger.info("finding one person")
+        logger.info("finding one person with id $id")
 
         var person = repository.findById(id)
             .orElseThrow({ ResourceNotFoundException("no records found for this id")})
-        return DozerMapper.parseObject(person, PersonVO::class.java)
+        val personVO: PersonVO = DozerMapper.parseObject(person, PersonVO::class.java)
+        val withSelfRel = linkTo( PersonController::class.java).slash(personVO.key).withSelfRel()
+        personVO.add(withSelfRel)
+        return personVO
     }
 
     fun create(person: PersonVO) : PersonVO {
@@ -50,7 +55,7 @@ class PersonService {
 
     fun update(person: PersonVO) : PersonVO {
         logger.info("update one person")
-        var entity = repository.findById(person.id)
+        var entity = repository.findById(person.key)
             .orElseThrow({ ResourceNotFoundException("no records found for this id")})
 
         entity.firstName = person.firstName
