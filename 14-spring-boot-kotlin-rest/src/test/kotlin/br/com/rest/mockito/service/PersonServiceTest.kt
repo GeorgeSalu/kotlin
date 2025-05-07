@@ -1,5 +1,6 @@
 package br.com.rest.mockito.service
 
+import br.com.rest.exceptions.RequiredObjectIsNullException
 import br.com.rest.repository.PersonRepository
 import br.com.rest.service.PersonService
 import br.com.rest.unitests.mapper.mocks.MockPerson
@@ -11,6 +12,7 @@ import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.Assertions.assertNotNull;
 import org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Assertions.assertTrue;
+import org.junit.jupiter.api.Assertions.assertThrows
 import org.junit.jupiter.api.extension.ExtendWith
 import org.mockito.InjectMocks
 import org.mockito.Mock
@@ -57,6 +59,18 @@ class PersonServiceTest {
         assertEquals("First Name Test1", result.firstName)
         assertEquals("Last Name Test1", result.lastName)
         assertEquals("Female", result.gender)
+    }
+
+    @Test
+    fun createWithNullPerson() {
+        val exception: Exception = assertThrows(
+            RequiredObjectIsNullException::class.java
+        ) { service.create(null) }
+
+        val expectedMessage = "It is not allowed to persist a null object"
+        val actualMessage = exception.message
+
+        assertTrue(actualMessage!!.contains(expectedMessage))
     }
 
     @Test
