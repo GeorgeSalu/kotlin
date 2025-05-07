@@ -55,12 +55,6 @@ class PersonService {
         return personVO
     }
 
-    fun createV2(person: PersonVOV2) : PersonVOV2 {
-        logger.info("create one person")
-        var entity: Person  = mapper.mapVOToEntity(person)
-        return mapper.mapEntityToVO(repository.save(entity))
-    }
-
     fun update(person: PersonVO) : PersonVO {
         logger.info("update one person")
         var entity = repository.findById(person.key)

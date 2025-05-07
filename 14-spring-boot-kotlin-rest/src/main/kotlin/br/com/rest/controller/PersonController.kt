@@ -37,11 +37,6 @@ class PersonController {
         return service.create(person)
     }
 
-    @PostMapping(value = ["/v2"],produces = [MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE], consumes = [MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE])
-    fun createV2(@RequestBody person: PersonVOV2) : PersonVOV2 {
-        return service.createV2(person)
-    }
-
     @PutMapping(produces = [MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE], consumes = [MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE])
     fun update(@RequestBody person: PersonVO) : PersonVO {
         return service.update(person)
