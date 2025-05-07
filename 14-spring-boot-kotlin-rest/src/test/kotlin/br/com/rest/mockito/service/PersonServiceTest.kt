@@ -41,6 +41,14 @@ class PersonServiceTest {
 
     @Test
     fun findAll() {
+        val person = inputObject.mockEntityList()
+
+        `when`(repository.findAll()).thenReturn(person)
+
+        val result = service.findAll()
+
+        assertNotNull(result)
+        assertEquals(14, result.size)
     }
 
     @Test
