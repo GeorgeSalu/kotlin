@@ -14,7 +14,7 @@ class OpenApiConfig {
         return OpenAPI()
             .info(
                 Info()
-                    .title("RESTful API with Kotlin and Spring Boot")
+                    .title("RESTfull API with Kotlin and Spring Boot")
                     .version("v1")
                     .description("Some description about your API")
                     .termsOfService("")
