@@ -151,6 +151,26 @@ class PersonController {
     }
 
     @DeleteMapping(value = ["/{id}"], produces = [MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE])
+    @Operation(summary = "delete a person", description = "delete a person",
+        tags = ["people"],
+        responses = [
+            ApiResponse(description = "No content", responseCode = "204", content = [
+                Content(schema = Schema(implementation = Unit::class))
+            ]),
+            ApiResponse(description = "Bad Request", responseCode = "400", content = [
+                Content(schema = Schema(implementation = Unit::class))
+            ]),
+            ApiResponse(description = "Unauthorized", responseCode = "401", content = [
+                Content(schema = Schema(implementation = Unit::class))
+            ]),
+            ApiResponse(description = "No Found", responseCode = "404", content = [
+                Content(schema = Schema(implementation = Unit::class))
+            ]),
+            ApiResponse(description = "Internal Error", responseCode = "500", content = [
+                Content(schema = Schema(implementation = Unit::class))
+            ])
+        ]
+    )
     fun delete(@PathVariable(value = "id") id: Long) : ResponseEntity<*> {
         service.delete(id)
         return ResponseEntity.noContent().build<Any>()
