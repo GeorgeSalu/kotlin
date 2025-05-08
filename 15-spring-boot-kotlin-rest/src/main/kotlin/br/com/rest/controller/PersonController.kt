@@ -39,7 +39,7 @@ class PersonController {
                     Content(array = ArraySchema(schema = Schema(implementation = PersonVO::class)))
                 ]
             ),
-            ApiResponse(description = "No content", responseCode = "204", content = [
+            ApiResponse(description = "No Content", responseCode = "204", content = [
                 Content(schema = Schema(implementation = Unit::class))
             ]),
             ApiResponse(description = "Bad Request", responseCode = "400", content = [
@@ -51,7 +51,7 @@ class PersonController {
             ApiResponse(description = "Not Found", responseCode = "404", content = [
                 Content(schema = Schema(implementation = Unit::class))
             ]),
-            ApiResponse(description = "Internal Error", responseCode = "500", content = [
+            ApiResponse(description = "Internal Server Error", responseCode = "500", content = [
                 Content(schema = Schema(implementation = Unit::class))
             ])
         ]
@@ -71,7 +71,7 @@ class PersonController {
                     Content(schema = Schema(implementation = PersonVO::class))
                 ]
             ),
-            ApiResponse(description = "No content", responseCode = "204", content = [
+            ApiResponse(description = "No Content", responseCode = "204", content = [
                 Content(schema = Schema(implementation = Unit::class))
             ]),
             ApiResponse(description = "Bad Request", responseCode = "400", content = [
@@ -83,7 +83,7 @@ class PersonController {
             ApiResponse(description = "Not Found", responseCode = "404", content = [
                 Content(schema = Schema(implementation = Unit::class))
             ]),
-            ApiResponse(description = "Internal Error", responseCode = "500", content = [
+            ApiResponse(description = "Internal Server Error", responseCode = "500", content = [
                 Content(schema = Schema(implementation = Unit::class))
             ])
         ]
@@ -109,7 +109,7 @@ class PersonController {
             ApiResponse(description = "Unauthorized", responseCode = "401", content = [
                 Content(schema = Schema(implementation = Unit::class))
             ]),
-            ApiResponse(description = "Internal Error", responseCode = "500", content = [
+            ApiResponse(description = "Internal Server Error", responseCode = "500", content = [
                 Content(schema = Schema(implementation = Unit::class))
             ])
         ]
@@ -129,7 +129,7 @@ class PersonController {
                     Content(schema = Schema(implementation = PersonVO::class))
                 ]
             ),
-            ApiResponse(description = "No content", responseCode = "204", content = [
+            ApiResponse(description = "No Content", responseCode = "204", content = [
                 Content(schema = Schema(implementation = Unit::class))
             ]),
             ApiResponse(description = "Bad Request", responseCode = "400", content = [
@@ -141,7 +141,7 @@ class PersonController {
             ApiResponse(description = "Not Found", responseCode = "404", content = [
                 Content(schema = Schema(implementation = Unit::class))
             ]),
-            ApiResponse(description = "Internal Error", responseCode = "500", content = [
+            ApiResponse(description = "Internal Server Error", responseCode = "500", content = [
                 Content(schema = Schema(implementation = Unit::class))
             ])
         ]
@@ -154,7 +154,7 @@ class PersonController {
     @Operation(summary = "delete a person", description = "delete a person",
         tags = ["people"],
         responses = [
-            ApiResponse(description = "No content", responseCode = "204", content = [
+            ApiResponse(description = "No Content", responseCode = "204", content = [
                 Content(schema = Schema(implementation = Unit::class))
             ]),
             ApiResponse(description = "Bad Request", responseCode = "400", content = [
@@ -166,7 +166,7 @@ class PersonController {
             ApiResponse(description = "Not Found", responseCode = "404", content = [
                 Content(schema = Schema(implementation = Unit::class))
             ]),
-            ApiResponse(description = "Internal Error", responseCode = "500", content = [
+            ApiResponse(description = "Internal Server Error", responseCode = "500", content = [
                 Content(schema = Schema(implementation = Unit::class))
             ])
         ]
