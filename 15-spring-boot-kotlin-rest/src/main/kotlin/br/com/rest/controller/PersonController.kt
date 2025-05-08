@@ -60,6 +60,33 @@ class PersonController {
         return service.findAll()
     }
 
+    @Operation(summary = "finds a people", description = "finds a people",
+        tags = ["people"],
+        responses = [
+            ApiResponse(
+                description = "Success",
+                responseCode = "200",
+                content = [
+                    Content(schema = Schema(implementation = PersonVO::class))
+                ]
+            ),
+            ApiResponse(description = "No content", responseCode = "204", content = [
+                Content(schema = Schema(implementation = Unit::class))
+            ]),
+            ApiResponse(description = "Bad Request", responseCode = "400", content = [
+                Content(schema = Schema(implementation = Unit::class))
+            ]),
+            ApiResponse(description = "Unauthorized", responseCode = "401", content = [
+                Content(schema = Schema(implementation = Unit::class))
+            ]),
+            ApiResponse(description = "No Found", responseCode = "404", content = [
+                Content(schema = Schema(implementation = Unit::class))
+            ]),
+            ApiResponse(description = "Internal Error", responseCode = "500", content = [
+                Content(schema = Schema(implementation = Unit::class))
+            ])
+        ]
+    )
     @GetMapping(value = ["/{id}"], produces = [MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE])
     fun findById(@PathVariable(value = "id") id: Long) : PersonVO {
         return service.findById(id)
