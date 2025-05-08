@@ -93,6 +93,27 @@ class PersonController {
     }
 
     @PostMapping(produces = [MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE], consumes = [MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE])
+    @Operation(summary = "adds a new person", description = "adds a new person",
+        tags = ["people"],
+        responses = [
+            ApiResponse(
+                description = "Success",
+                responseCode = "200",
+                content = [
+                    Content(schema = Schema(implementation = PersonVO::class))
+                ]
+            ),
+            ApiResponse(description = "Bad Request", responseCode = "400", content = [
+                Content(schema = Schema(implementation = Unit::class))
+            ]),
+            ApiResponse(description = "Unauthorized", responseCode = "401", content = [
+                Content(schema = Schema(implementation = Unit::class))
+            ]),
+            ApiResponse(description = "Internal Error", responseCode = "500", content = [
+                Content(schema = Schema(implementation = Unit::class))
+            ])
+        ]
+    )
     fun create(@RequestBody person: PersonVO) : PersonVO {
         return service.create(person)
     }
