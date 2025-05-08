@@ -1,7 +1,6 @@
 package br.com.rest.controller
 
 import br.com.rest.data.vo.v1.PersonVO
-import br.com.rest.data.vo.v2.PersonVO as PersonVOV2
 import br.com.rest.service.PersonService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.MediaType
