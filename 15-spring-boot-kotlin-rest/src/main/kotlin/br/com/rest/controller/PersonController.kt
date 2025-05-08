@@ -60,6 +60,7 @@ class PersonController {
         return service.findAll()
     }
 
+    @GetMapping(value = ["/{id}"], produces = [MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE])
     @Operation(summary = "finds a people", description = "finds a people",
         tags = ["people"],
         responses = [
@@ -87,7 +88,6 @@ class PersonController {
             ])
         ]
     )
-    @GetMapping(value = ["/{id}"], produces = [MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE])
     fun findById(@PathVariable(value = "id") id: Long) : PersonVO {
         return service.findById(id)
     }
