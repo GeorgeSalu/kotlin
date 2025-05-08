@@ -48,7 +48,7 @@ class PersonController {
             ApiResponse(description = "Unauthorized", responseCode = "401", content = [
                 Content(schema = Schema(implementation = Unit::class))
             ]),
-            ApiResponse(description = "No Found", responseCode = "404", content = [
+            ApiResponse(description = "Not Found", responseCode = "404", content = [
                 Content(schema = Schema(implementation = Unit::class))
             ]),
             ApiResponse(description = "Internal Error", responseCode = "500", content = [
@@ -80,7 +80,7 @@ class PersonController {
             ApiResponse(description = "Unauthorized", responseCode = "401", content = [
                 Content(schema = Schema(implementation = Unit::class))
             ]),
-            ApiResponse(description = "No Found", responseCode = "404", content = [
+            ApiResponse(description = "Not Found", responseCode = "404", content = [
                 Content(schema = Schema(implementation = Unit::class))
             ]),
             ApiResponse(description = "Internal Error", responseCode = "500", content = [
@@ -138,7 +138,7 @@ class PersonController {
             ApiResponse(description = "Unauthorized", responseCode = "401", content = [
                 Content(schema = Schema(implementation = Unit::class))
             ]),
-            ApiResponse(description = "No Found", responseCode = "404", content = [
+            ApiResponse(description = "Not Found", responseCode = "404", content = [
                 Content(schema = Schema(implementation = Unit::class))
             ]),
             ApiResponse(description = "Internal Error", responseCode = "500", content = [
@@ -163,7 +163,7 @@ class PersonController {
             ApiResponse(description = "Unauthorized", responseCode = "401", content = [
                 Content(schema = Schema(implementation = Unit::class))
             ]),
-            ApiResponse(description = "No Found", responseCode = "404", content = [
+            ApiResponse(description = "Not Found", responseCode = "404", content = [
                 Content(schema = Schema(implementation = Unit::class))
             ]),
             ApiResponse(description = "Internal Error", responseCode = "500", content = [
