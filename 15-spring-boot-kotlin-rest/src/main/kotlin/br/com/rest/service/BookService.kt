@@ -2,6 +2,7 @@ package br.com.rest.service
 
 import br.com.rest.controller.BookController
 import br.com.rest.data.vo.v1.BookVO
+import br.com.rest.exceptions.ResourceNotFoundException
 import br.com.rest.mapper.DozerMapper
 import br.com.rest.repository.BookRepository
 import org.springframework.beans.factory.annotation.Autowired
@@ -27,6 +28,16 @@ class BookService {
             book.add(withSelfRel)
         }
         return  vos
+    }
+
+    fun findById(id: Long): BookVO {
+        logger.info("finding one book with id $id")
+        var book = repository.findById(id)
+            .orElseThrow { ResourceNotFoundException("no records fnound for this id") }
+        val bookVO: BookVO = DozerMapper.parseObject(book, BookVO::class.java)
+        val withSelfRel = linkTo(BookController::class.java).slash(bookVO.key).withSelfRel()
+        bookVO.add(withSelfRel)
+        return bookVO
     }
 
 }
