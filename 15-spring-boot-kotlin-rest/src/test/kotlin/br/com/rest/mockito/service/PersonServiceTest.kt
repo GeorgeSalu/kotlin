@@ -24,6 +24,7 @@ import org.mockito.junit.jupiter.MockitoExtension
 import java.util.Optional
 
 @ExtendWith(MockitoExtension::class)
+@DisplayName("Junit valida operações de PersonService")
 class PersonServiceTest {
 
     private lateinit var inputObject: MockPerson
