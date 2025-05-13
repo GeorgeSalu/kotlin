@@ -35,7 +35,7 @@ class BookService {
     fun findById(id: Long): BookVO {
         logger.info("finding one book with id $id")
         var book = repository.findById(id)
-            .orElseThrow { ResourceNotFoundException("no records fnound for this id") }
+            .orElseThrow { ResourceNotFoundException("no records found for this id") }
         val bookVO: BookVO = DozerMapper.parseObject(book, BookVO::class.java)
         val withSelfRel = linkTo(BookController::class.java).slash(bookVO.key).withSelfRel()
         bookVO.add(withSelfRel)
