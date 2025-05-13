@@ -149,6 +149,9 @@ class BookController {
     }
 
     @DeleteMapping(value = ["/{id}"])
+    @Operation(summary = "Deletes a book", description = "Deletes a book",
+        tags = ["Books"]
+    )
     fun delete(@PathVariable(value="id") id: Long) : ResponseEntity<*> {
         service.delete(id)
         return ResponseEntity.noContent().build<Any>()
