@@ -52,4 +52,20 @@ class BookService {
         return bookVO
     }
 
+    fun update(book: BookVO?) : BookVO{
+        if (book == null) throw RequiredObjectIsNullException()
+        logger.info("Updating one book with ID ${book.key}!")
+        val entity = repository.findById(book.key)
+            .orElseThrow { ResourceNotFoundException("No records found for this ID!") }
+
+        entity.author = book.author
+        entity.title = book.title
+        entity.price = book.price
+        entity.launchDate = book.launchDate
+        val bookVO: BookVO = DozerMapper.parseObject(repository.save(entity), BookVO::class.java)
+        val withSelfRel = linkTo(BookController::class.java).slash(bookVO.key).withSelfRel()
+        bookVO.add(withSelfRel)
+        return bookVO
+    }
+
 }
