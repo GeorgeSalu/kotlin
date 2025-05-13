@@ -13,6 +13,7 @@ import org.junit.jupiter.api.Assertions.assertNotNull;
 import org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Assertions.assertThrows
+import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.extension.ExtendWith
 import org.mockito.InjectMocks
 import org.mockito.Mock
@@ -40,6 +41,7 @@ class PersonServiceTest {
     }
 
     @Test
+    @DisplayName("Junit valida operação create")
     fun findAll() {
         val person = inputObject.mockEntityList()
 
@@ -52,6 +54,7 @@ class PersonServiceTest {
     }
 
     @Test
+    @DisplayName("Junit valida operação findById")
     fun findById() {
         val person = inputObject.mockEntity(1)
         person.id = 1L
@@ -70,6 +73,7 @@ class PersonServiceTest {
     }
 
     @Test
+    @DisplayName("Junit valida operação create com person null")
     fun createWithNullPerson() {
         val exception: Exception = assertThrows(
             RequiredObjectIsNullException::class.java
@@ -82,6 +86,7 @@ class PersonServiceTest {
     }
 
     @Test
+    @DisplayName("Junit valida operação update com person null")
     fun updateWithNullPerson() {
         val exception: Exception = assertThrows(
             RequiredObjectIsNullException::class.java
@@ -94,6 +99,7 @@ class PersonServiceTest {
     }
 
     @Test
+    @DisplayName("Junit valida operação create")
     fun create() {
         val entity = inputObject.mockEntity(1)
         val persisted = entity.copy()
@@ -116,6 +122,7 @@ class PersonServiceTest {
     }
 
     @Test
+    @DisplayName("Junit valida operação update")
     fun update() {
         val entity = inputObject.mockEntity(1)
         val persisted = entity.copy()
@@ -139,6 +146,7 @@ class PersonServiceTest {
     }
 
     @Test
+    @DisplayName("Junit valida operação delete")
     fun delete() {
         val entity = inputObject.mockEntity(1)
 
