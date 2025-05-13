@@ -19,6 +19,7 @@ import org.mockito.MockitoAnnotations
 import org.mockito.junit.jupiter.MockitoExtension
 
 @ExtendWith(MockitoExtension::class)
+@DisplayName("Junit valida operações de BookService")
 class BookServiceTest {
 
     private lateinit var inputObject: MockBook
