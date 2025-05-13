@@ -36,7 +36,7 @@ class BookServiceTest {
     }
 
     @Test
-    @DisplayName("Junit valida findAll books")
+    @DisplayName("Junit valida operação findAll books")
     fun findAll() {
         val list = inputObject.mockEntityList()
         `when`(repository.findAll()).thenReturn(list)
@@ -78,7 +78,7 @@ class BookServiceTest {
     }
 
     @Test
-    @DisplayName("Junit valida findById books")
+    @DisplayName("Junit valida operação findById books")
     fun findById() {
         val book = inputObject.mockEntity(1)
         book.id = 1
@@ -96,7 +96,7 @@ class BookServiceTest {
     }
 
     @Test
-    @DisplayName("Junit valida create books")
+    @DisplayName("Junit valida operação create books")
     fun create() {
         val entity = inputObject.mockEntity(1)
 
@@ -118,7 +118,7 @@ class BookServiceTest {
     }
 
     @Test
-    @DisplayName("Junit valida create com null books")
+    @DisplayName("Junit valida operação create com null books")
     fun createWithNullBook() {
         val exception: Exception = assertThrows(
             RequiredObjectIsNullException::class.java
@@ -130,7 +130,7 @@ class BookServiceTest {
     }
 
     @Test
-    @DisplayName("Junit valida update books")
+    @DisplayName("Junit valida operação update books")
     fun update() {
         val entity = inputObject.mockEntity(1)
 
@@ -153,7 +153,7 @@ class BookServiceTest {
     }
 
     @Test
-    @DisplayName("Junit valida update com null books")
+    @DisplayName("Junit valida operação update com null books")
     fun updateWithNullBook() {
         val exception: Exception = assertThrows(
             RequiredObjectIsNullException::class.java
@@ -165,7 +165,7 @@ class BookServiceTest {
     }
 
     @Test
-    @DisplayName("Junit valida delete books")
+    @DisplayName("Junit valida operação delete books")
     fun delete() {
         val entity = inputObject.mockEntity(1)
         `when`(repository.findById(1)).thenReturn(Optional.of(entity))
