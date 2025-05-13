@@ -26,6 +26,7 @@ class BookServiceTest {
     @BeforeEach
     fun setUpMock() {
         inputObject = MockBook()
+        MockitoAnnotations.openMocks(this)
     }
 
 }
