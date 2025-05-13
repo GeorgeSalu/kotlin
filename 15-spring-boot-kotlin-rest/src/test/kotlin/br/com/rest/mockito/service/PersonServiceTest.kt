@@ -41,7 +41,7 @@ class PersonServiceTest {
     }
 
     @Test
-    @DisplayName("Junit valida operação create person")
+    @DisplayName("Junit valida operação findAll person")
     fun findAll() {
         val person = inputObject.mockEntityList()
 
