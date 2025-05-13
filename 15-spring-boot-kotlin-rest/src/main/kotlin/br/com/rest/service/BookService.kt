@@ -68,4 +68,11 @@ class BookService {
         return bookVO
     }
 
+    fun delete(id: Long) {
+        logger.info("Deleting one book with ID $id!")
+        val entity = repository.findById(id)
+            .orElseThrow { ResourceNotFoundException("No records found for this ID!") }
+        repository.delete(entity)
+    }
+
 }
