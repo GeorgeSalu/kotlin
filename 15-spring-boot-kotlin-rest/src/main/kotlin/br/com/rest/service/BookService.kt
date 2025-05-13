@@ -53,7 +53,7 @@ class BookService {
     }
 
     fun update(book: BookVO?) : BookVO{
-        if (book == null) throw RequiredObjectIsNullException()
+        if (book == null) throw RequiredObjectIsNullException("It is not allowed to persist a null object!")
         logger.info("Updating one book with ID ${book.key}!")
         val entity = repository.findById(book.key)
             .orElseThrow { ResourceNotFoundException("No records found for this ID!") }
