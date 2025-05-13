@@ -2,8 +2,10 @@ package br.com.rest.service
 
 import br.com.rest.controller.BookController
 import br.com.rest.data.vo.v1.BookVO
+import br.com.rest.exceptions.RequiredObjectIsNullException
 import br.com.rest.exceptions.ResourceNotFoundException
 import br.com.rest.mapper.DozerMapper
+import br.com.rest.model.Book
 import br.com.rest.repository.BookRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo
@@ -35,6 +37,16 @@ class BookService {
         var book = repository.findById(id)
             .orElseThrow { ResourceNotFoundException("no records fnound for this id") }
         val bookVO: BookVO = DozerMapper.parseObject(book, BookVO::class.java)
+        val withSelfRel = linkTo(BookController::class.java).slash(bookVO.key).withSelfRel()
+        bookVO.add(withSelfRel)
+        return bookVO
+    }
+
+    fun create(book: BookVO?) : BookVO{
+        if (book == null) throw RequiredObjectIsNullException()
+        logger.info("Creating one book with title ${book.title}!")
+        var entity: Book = DozerMapper.parseObject(book, Book::class.java)
+        val bookVO: BookVO = DozerMapper.parseObject(repository.save(entity), BookVO::class.java)
         val withSelfRel = linkTo(BookController::class.java).slash(bookVO.key).withSelfRel()
         bookVO.add(withSelfRel)
         return bookVO
