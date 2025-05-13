@@ -79,4 +79,21 @@ class BookServiceTest {
         assertEquals(25.0, bookSeven.price)
     }
 
+    @Test
+    fun findById() {
+        val book = inputObject.mockEntity(1)
+        book.id = 1
+        `when`(repository.findById(1)).thenReturn(Optional.of(book))
+
+        val result = service.findById(1)
+
+        assertNotNull(result)
+        assertNotNull(result.key)
+        assertNotNull(result.links)
+        assertTrue(result.links.toString().contains("</api/book/v1/1>;rel=\"self\""))
+        assertEquals("Some Title1", result.title)
+        assertEquals("Some Author1", result.author)
+        assertEquals(25.0, result.price)
+    }
+
 }
