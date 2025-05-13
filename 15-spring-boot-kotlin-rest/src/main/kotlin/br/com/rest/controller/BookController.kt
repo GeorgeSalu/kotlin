@@ -150,7 +150,24 @@ class BookController {
 
     @DeleteMapping(value = ["/{id}"])
     @Operation(summary = "Deletes a book", description = "Deletes a book",
-        tags = ["Books"]
+        tags = ["Books"],
+        responses = [
+            ApiResponse(description = "No Content", responseCode = "204", content = [
+                Content(schema = Schema(implementation = Unit::class))
+            ]),
+            ApiResponse(description = "Bad Request", responseCode = "400", content = [
+                Content(schema = Schema(implementation = Unit::class))
+            ]),
+            ApiResponse(description = "Unauthorized", responseCode = "401", content = [
+                Content(schema = Schema(implementation = Unit::class))
+            ]),
+            ApiResponse(description = "Not Found", responseCode = "404", content = [
+                Content(schema = Schema(implementation = Unit::class))
+            ]),
+            ApiResponse(description = "Internal Error", responseCode = "500", content = [
+                Content(schema = Schema(implementation = Unit::class))
+            ]),
+        ]
     )
     fun delete(@PathVariable(value="id") id: Long) : ResponseEntity<*> {
         service.delete(id)
