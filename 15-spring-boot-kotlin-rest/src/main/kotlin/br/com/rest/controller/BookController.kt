@@ -90,6 +90,27 @@ class BookController {
     }
 
     @PostMapping
+    @Operation(summary = "Adds a new Book", description = "Adds a new Book",
+        tags = ["Books"],
+        responses = [
+            ApiResponse(
+                description = "Success",
+                responseCode = "200",
+                content = [
+                    Content(schema = Schema(implementation = BookVO::class))
+                ]
+            ),
+            ApiResponse(description = "Bad Request", responseCode = "400", content = [
+                Content(schema = Schema(implementation = Unit::class))
+            ]),
+            ApiResponse(description = "Unauthorized", responseCode = "401", content = [
+                Content(schema = Schema(implementation = Unit::class))
+            ]),
+            ApiResponse(description = "Internal Error", responseCode = "500", content = [
+                Content(schema = Schema(implementation = Unit::class))
+            ]),
+        ]
+    )
     fun create(@RequestBody book: BookVO): BookVO {
         return service.create(book)
 
