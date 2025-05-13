@@ -43,7 +43,7 @@ class BookService {
     }
 
     fun create(book: BookVO?) : BookVO{
-        if (book == null) throw RequiredObjectIsNullException()
+        if (book == null) throw RequiredObjectIsNullException("It is not allowed to persist a null object!")
         logger.info("Creating one book with title ${book.title}!")
         var entity: Book = DozerMapper.parseObject(book, Book::class.java)
         val bookVO: BookVO = DozerMapper.parseObject(repository.save(entity), BookVO::class.java)
