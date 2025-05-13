@@ -41,7 +41,7 @@ class PersonServiceTest {
     }
 
     @Test
-    @DisplayName("Junit valida operação create")
+    @DisplayName("Junit valida operação create person")
     fun findAll() {
         val person = inputObject.mockEntityList()
 
@@ -54,7 +54,7 @@ class PersonServiceTest {
     }
 
     @Test
-    @DisplayName("Junit valida operação findById")
+    @DisplayName("Junit valida operação findById person")
     fun findById() {
         val person = inputObject.mockEntity(1)
         person.id = 1L
@@ -99,7 +99,7 @@ class PersonServiceTest {
     }
 
     @Test
-    @DisplayName("Junit valida operação create")
+    @DisplayName("Junit valida operação create person")
     fun create() {
         val entity = inputObject.mockEntity(1)
         val persisted = entity.copy()
@@ -122,7 +122,7 @@ class PersonServiceTest {
     }
 
     @Test
-    @DisplayName("Junit valida operação update")
+    @DisplayName("Junit valida operação update person")
     fun update() {
         val entity = inputObject.mockEntity(1)
         val persisted = entity.copy()
@@ -146,7 +146,7 @@ class PersonServiceTest {
     }
 
     @Test
-    @DisplayName("Junit valida operação delete")
+    @DisplayName("Junit valida operação delete person")
     fun delete() {
         val entity = inputObject.mockEntity(1)
 
