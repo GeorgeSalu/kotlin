@@ -140,4 +140,11 @@ class BookServiceTest {
         assertEquals(25.0, result.price)
     }
 
+    @Test
+    fun delete() {
+        val entity = inputObject.mockEntity(1)
+        `when`(repository.findById(1)).thenReturn(Optional.of(entity))
+        service.delete(1)
+    }
+
 }
