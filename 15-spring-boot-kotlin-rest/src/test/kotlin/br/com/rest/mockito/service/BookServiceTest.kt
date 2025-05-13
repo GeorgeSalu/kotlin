@@ -96,4 +96,25 @@ class BookServiceTest {
         assertEquals(25.0, result.price)
     }
 
+    @Test
+    fun create() {
+        val entity = inputObject.mockEntity(1)
+
+        val persisted = entity.copy()
+        persisted.id = 1
+
+        `when`(repository.save(entity)).thenReturn(persisted)
+
+        val vo = inputObject.mockVO(1)
+        val result = service.create(vo)
+
+        assertNotNull(result)
+        assertNotNull(result.key)
+        assertNotNull(result.links)
+        assertTrue(result.links.toString().contains("</api/book/v1/1>;rel=\"self\""))
+        assertEquals("Some Title1", result.title)
+        assertEquals("Some Author1", result.author)
+        assertEquals(25.0, result.price)
+    }
+
 }
