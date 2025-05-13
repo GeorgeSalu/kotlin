@@ -6,6 +6,7 @@ import br.com.rest.service.BookService
 import br.com.rest.unitests.mapper.mocks.MockBook
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Assertions.*
+import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
 import org.mockito.Mockito.`when`
 import java.util.*
@@ -35,6 +36,7 @@ class BookServiceTest {
     }
 
     @Test
+    @DisplayName("Junit valida findAll books")
     fun findAll() {
         val list = inputObject.mockEntityList()
         `when`(repository.findAll()).thenReturn(list)
@@ -76,6 +78,7 @@ class BookServiceTest {
     }
 
     @Test
+    @DisplayName("Junit valida findById books")
     fun findById() {
         val book = inputObject.mockEntity(1)
         book.id = 1
@@ -93,6 +96,7 @@ class BookServiceTest {
     }
 
     @Test
+    @DisplayName("Junit valida create books")
     fun create() {
         val entity = inputObject.mockEntity(1)
 
@@ -114,6 +118,7 @@ class BookServiceTest {
     }
 
     @Test
+    @DisplayName("Junit valida create com null books")
     fun createWithNullBook() {
         val exception: Exception = assertThrows(
             RequiredObjectIsNullException::class.java
@@ -125,6 +130,7 @@ class BookServiceTest {
     }
 
     @Test
+    @DisplayName("Junit valida update books")
     fun update() {
         val entity = inputObject.mockEntity(1)
 
@@ -147,6 +153,7 @@ class BookServiceTest {
     }
 
     @Test
+    @DisplayName("Junit valida update com null books")
     fun updateWithNullBook() {
         val exception: Exception = assertThrows(
             RequiredObjectIsNullException::class.java
@@ -158,6 +165,7 @@ class BookServiceTest {
     }
 
     @Test
+    @DisplayName("Junit valida delete books")
     fun delete() {
         val entity = inputObject.mockEntity(1)
         `when`(repository.findById(1)).thenReturn(Optional.of(entity))
