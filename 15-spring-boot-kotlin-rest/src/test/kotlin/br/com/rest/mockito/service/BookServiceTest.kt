@@ -5,13 +5,8 @@ import br.com.rest.repository.BookRepository
 import br.com.rest.service.BookService
 import br.com.rest.unitests.mapper.mocks.MockBook
 import org.junit.jupiter.api.BeforeEach
-import org.junit.jupiter.api.Assertions.assertNotNull
-import org.junit.jupiter.api.Assertions.assertEquals
-import org.junit.jupiter.api.Assertions.assertTrue
-import org.junit.jupiter.api.Assertions.assertThrows
+import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
-
-
 import org.mockito.Mockito.`when`
 import java.util.*
 import org.junit.jupiter.api.extension.ExtendWith
