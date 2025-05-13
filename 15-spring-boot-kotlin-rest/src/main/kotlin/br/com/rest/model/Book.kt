@@ -17,7 +17,7 @@ data class Book(
     var id: Long = 0,
 
     @Column(nullable = false, length = 180)
-    var authos: String = "",
+    var author: String = "",
 
     @Column(name = "launch_date")
     var launchDate: Date? = null,
