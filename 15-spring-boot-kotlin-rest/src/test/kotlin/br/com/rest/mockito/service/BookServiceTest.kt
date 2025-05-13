@@ -1,5 +1,6 @@
 package br.com.rest.mockito.service
 
+import br.com.rest.exceptions.RequiredObjectIsNullException
 import br.com.rest.repository.BookRepository
 import br.com.rest.service.BookService
 import br.com.rest.unitests.mapper.mocks.MockBook
@@ -107,6 +108,28 @@ class BookServiceTest {
 
         val vo = inputObject.mockVO(1)
         val result = service.create(vo)
+
+        assertNotNull(result)
+        assertNotNull(result.key)
+        assertNotNull(result.links)
+        assertTrue(result.links.toString().contains("</api/book/v1/1>;rel=\"self\""))
+        assertEquals("Some Title1", result.title)
+        assertEquals("Some Author1", result.author)
+        assertEquals(25.0, result.price)
+    }
+
+    @Test
+    fun update() {
+        val entity = inputObject.mockEntity(1)
+
+        val persisted = entity.copy()
+        persisted.id = 1
+
+        `when`(repository.findById(1)).thenReturn(Optional.of(entity))
+        `when`(repository.save(entity)).thenReturn(persisted)
+
+        val vo = inputObject.mockVO(1)
+        val result = service.update(vo)
 
         assertNotNull(result)
         assertNotNull(result.key)
