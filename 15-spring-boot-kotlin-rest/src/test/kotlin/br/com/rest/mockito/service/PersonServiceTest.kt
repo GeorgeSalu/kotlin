@@ -42,7 +42,7 @@ class PersonServiceTest {
     }
 
     @Test
-    @DisplayName("Junit valida operação findAll person")
+    @DisplayName("Junit: valida operação findAll person")
     fun findAll() {
         val person = inputObject.mockEntityList()
 
@@ -55,7 +55,7 @@ class PersonServiceTest {
     }
 
     @Test
-    @DisplayName("Junit valida operação findById person")
+    @DisplayName("Junit: valida operação findById person")
     fun findById() {
         val person = inputObject.mockEntity(1)
         person.id = 1L
@@ -74,7 +74,7 @@ class PersonServiceTest {
     }
 
     @Test
-    @DisplayName("Junit valida operação create com person null")
+    @DisplayName("Junit: valida operação create com person null")
     fun createWithNullPerson() {
         val exception: Exception = assertThrows(
             RequiredObjectIsNullException::class.java
@@ -87,7 +87,7 @@ class PersonServiceTest {
     }
 
     @Test
-    @DisplayName("Junit valida operação update com person null")
+    @DisplayName("Junit: valida operação update com person null")
     fun updateWithNullPerson() {
         val exception: Exception = assertThrows(
             RequiredObjectIsNullException::class.java
@@ -100,7 +100,7 @@ class PersonServiceTest {
     }
 
     @Test
-    @DisplayName("Junit valida operação create person")
+    @DisplayName("Junit: valida operação create person")
     fun create() {
         val entity = inputObject.mockEntity(1)
         val persisted = entity.copy()
@@ -123,7 +123,7 @@ class PersonServiceTest {
     }
 
     @Test
-    @DisplayName("Junit valida operação update person")
+    @DisplayName("Junit: valida operação update person")
     fun update() {
         val entity = inputObject.mockEntity(1)
         val persisted = entity.copy()
@@ -147,7 +147,7 @@ class PersonServiceTest {
     }
 
     @Test
-    @DisplayName("Junit valida operação delete person")
+    @DisplayName("Junit: valida operação delete person")
     fun delete() {
         val entity = inputObject.mockEntity(1)
 
