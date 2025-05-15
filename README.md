@@ -25,19 +25,18 @@ Pra fechar com chave de ouro, você ainda vai aprender tudo sobre gerenciamento 
 
 Esse conhecimento será aplicado na implementação de uma API RESTful com Spring Boot 3 e Kotlin. Iniciaremos com uma aplicação simples aprendendo como funciona as principais annotations e aprendendo a tratar exceções sempre avançando gradualmente para cenários mais complexos. Abordaremos, noções de HTTP, verbos/métodos, tipos de parâmetros, paginação, upload e download de arquivos, versionamento, HATEOAS, Swagger, autenticação e muito mais
 
-- Spring Boot 3;
-- Kotlin;
-- Conceitos arquiteturais do REST/RESTful;
-- Migrations com Flyway;
-- Postman;
-- Integração com o banco de dados MySQL;
-- Content Negotiation;
-- Versionamento de API’s;
-- HATEOAS;
-- Swagger Open API;
-- Autenticação com JWT e Spring Security;
-- Testes unitários e de integração com:
-- JUnit 5;
-- Mockito;
-- REST Assured;
+- Spring Boot 3.
+- Kotlin.
+- Conceitos arquiteturais do REST/RESTful.
+- Migrations com Flyway.
+- Postman.
+- Integração com o banco de dados MySQL.
+- Content Negotiation.
+- Versionamento de API’s.
+- HATEOAS.
+- Swagger Open API.
+- Autenticação com JWT e Spring Security.
+- JUnit 5.
+- Mockito.
+- REST Assured.
 - Testcontainers.
