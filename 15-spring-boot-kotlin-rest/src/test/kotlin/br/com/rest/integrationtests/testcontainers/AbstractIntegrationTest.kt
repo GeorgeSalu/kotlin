@@ -17,10 +17,10 @@ open class AbstractIntegrationTest {
             startContainers()
 
             val environment = applicationContext.environment
-            val testContaniners = MapPropertySource(
+            val testContainers = MapPropertySource(
                 "testcontainers", createConnectionConfigration()
             )
-            environment.propertySources.addFirst(testContaniners)
+            environment.propertySources.addFirst(testContainers)
         }
 
         companion object {
