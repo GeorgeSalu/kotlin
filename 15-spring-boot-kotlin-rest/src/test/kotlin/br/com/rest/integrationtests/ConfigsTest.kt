@@ -1,4 +1,4 @@
-package br.com.rest
+package br.com.rest.integrationtests
 
 object ConfigsTest {
 
