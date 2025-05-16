@@ -8,7 +8,7 @@ import io.restassured.RestAssured.given
 import kotlin.test.assertTrue
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
-class SwaggerTest() : AbstractIntegrationTest() {
+class SwaggerIntegrationTest() : AbstractIntegrationTest() {
 
     @Test
     fun shouldDisplaySwaggerUIPage() {
