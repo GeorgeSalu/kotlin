@@ -16,11 +16,11 @@ open class AbstractIntegrationTest {
         override fun initialize(applicationContext: ConfigurableApplicationContext) {
             startContainers()
 
-            val enviroment = applicationContext.environment
+            val environment = applicationContext.environment
             val testContaniners = MapPropertySource(
                 "testcontainers", createConnectionConfigration()
             )
-            enviroment.propertySources.addFirst(testContaniners)
+            environment.propertySources.addFirst(testContaniners)
         }
 
         companion object {
