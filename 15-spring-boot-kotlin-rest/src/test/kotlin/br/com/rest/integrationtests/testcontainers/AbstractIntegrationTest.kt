@@ -18,7 +18,7 @@ open class AbstractIntegrationTest {
 
             val environment = applicationContext.environment
             val testContainers = MapPropertySource(
-                "testcontainers", createConnectionConfigration()
+                "testcontainers", createConnectionConfiguration()
             )
             environment.propertySources.addFirst(testContainers)
         }
@@ -32,7 +32,7 @@ open class AbstractIntegrationTest {
                 Startables.deepStart(Stream.of(mysql)).join()
             }
 
-            private fun createConnectionConfigration(): MutableMap<String, Any> {
+            private fun createConnectionConfiguration(): MutableMap<String, Any> {
                 return java.util.Map.of(
                     "spring.datasource.url", mysql.jdbcUrl,
                     "spring.datasource.username", mysql.username,
