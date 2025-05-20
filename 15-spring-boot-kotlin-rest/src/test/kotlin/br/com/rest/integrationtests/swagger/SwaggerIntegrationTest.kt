@@ -1,6 +1,6 @@
 package br.com.rest.integrationtests.swagger
 
-import br.com.rest.integrationtests.ConfigsTest
+import br.com.rest.integrationtests.TestConfigs
 import br.com.rest.integrationtests.testcontainers.AbstractIntegrationTest
 import org.junit.Test
 import org.springframework.boot.test.context.SpringBootTest
@@ -14,7 +14,7 @@ class SwaggerIntegrationTest() : AbstractIntegrationTest() {
     fun shouldDisplaySwaggerUIPage() {
         val content = given()
             .basePath("/swagger-ui/index.html")
-            .port(ConfigsTest.SERVER_PORT)
+            .port(TestConfigs.SERVER_PORT)
                 .`when`()
             .get()
             .then()

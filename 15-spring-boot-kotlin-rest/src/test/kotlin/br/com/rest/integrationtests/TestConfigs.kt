@@ -1,6 +1,6 @@
 package br.com.rest.integrationtests
 
-object ConfigsTest {
+object TestConfigs {
 
     const val SERVER_PORT = 8888
 }
