@@ -7,5 +7,4 @@ word `Buzz`. For numbers which are multiples of both three and five list should 
 
 fizzBuzz(5) // [1, 2, "Fizz", 4, "Buzz"]
 fizzBuzz(16) // [1, 2, "Fizz", 4, "Buzz", 5, "Fizz", 7, 8, "Fizz", "Buzz", 11, "Fizz", 13, 14, "FizzBuzz", 16]
-
 * */
