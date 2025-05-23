@@ -23,3 +23,18 @@ fun fizzBuzz(n: Int): List<String> {
     }
     return  list
 }
+
+fun fizzBuzz2(n: Int): List<String> {
+    val list = mutableListOf<String>()
+
+    (1..n).forEach {
+        val item = when {
+            it % 3 == 0 && it % 5 == 0 -> "FizzBuzz"
+            it % 3 == 0 -> "Fizz"
+            it % 5 == 0 -> "Buzz"
+            else -> it.toString()
+        }
+        list.add(item)
+    }
+    return list
+}
