@@ -13,7 +13,7 @@ public class Animal {
     }
 
     public String show() {
-        return name + " is a " + kind + " and weighs" + weight + " kg";
+        return name + " is a " + kind + " and weighs " + weight + " kg";
     }
 
     public String getName() {
