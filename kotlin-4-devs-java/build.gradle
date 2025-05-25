@@ -10,7 +10,7 @@ repositories {
 }
 
 dependencies {
-    runtimeOnly("org.jetbrains.kotlin:kotlin-reflect:1.6.10")
+    runtimeOnly("org.jetbrains.kotlin:kotlin-reflect:2.1.20")
 
     testImplementation 'org.jetbrains.kotlin:kotlin-test'
     testImplementation ("org.junit.jupiter:junit-jupiter:5.8.2")
