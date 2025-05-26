@@ -1,8 +1,6 @@
 package demo.model
 
 import jakarta.persistence.*
-import java.io.Serializable
-
 
 @Entity
 @Table(name = "person")
