@@ -23,4 +23,9 @@ class TestOperatorOverload {
         p3.toString() shouldBeEqualTo "Coordinates(x=1200, y=2100)"
     }
 
+    @Test
+    fun `Calling OperatorOverload with "(200, 100) minus (1000, 2000)" returns Coordinates(x=1200, y=2100)`(){
+        val p3 = p1 - p2
+        p3.toString() shouldBeEqualTo "Coordinates(x=-800, y=-1900)"
+    }
 }
