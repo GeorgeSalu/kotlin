@@ -1,11 +1,13 @@
 package demo.services
 
+import demo.exception.ResourceNotFoundException
 import demo.model.Person
 import demo.repository.PersonRepository
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.stereotype.Service
 
 
-@org.springframework.stereotype.Service
+@Service
 class PersonServices {
     @Autowired
     var repository: PersonRepository? = null

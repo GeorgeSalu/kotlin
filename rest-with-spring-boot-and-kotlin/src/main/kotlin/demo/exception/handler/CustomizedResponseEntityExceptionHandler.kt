@@ -1,6 +1,8 @@
 package demo.exception.handler
 
-import br.com.erudio.exception.ExceptionResponse
+import org.springframework.web.bind.annotation.ControllerAdvice
+import org.springframework.web.bind.annotation.RestController
+
 
 @ControllerAdvice
 @RestController
