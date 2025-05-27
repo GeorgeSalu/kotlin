@@ -14,8 +14,8 @@ class PersonServices {
     private lateinit var repository: PersonRepository
 
     fun create(person: Person): Person = repository.save(person)
-    
-    fun findAll(): List<Person?> {
+
+    fun findAll(): List<Person> {
         return repository.findAll()
     }
 
