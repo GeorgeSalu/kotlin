@@ -9,36 +9,36 @@ import org.springframework.stereotype.Service
 
 @Service
 class PersonServices {
-    @Autowired
-    var repository: PersonRepository? = null
 
-    fun create(person: Person?): Person {
-        return repository.save(person)
-    }
+    @Autowired
+    private lateinit var repository: PersonRepository
+
+    fun create(person: Person): Person = repository.save(person)
+
 
     fun findAll(): kotlin.collections.MutableList<Person?> {
         return repository.findAll()
     }
 
-    fun findById(id: kotlin.Long?): Person {
+    fun findById(id: kotlin.Long): Person {
         return repository.findById(id)
             .orElseThrow({ ResourceNotFoundException("No records found for this ID") })
     }
 
     fun update(person: Person): Person {
-        val entity: Person = repository.findById(person.getId())
+        val entity: Person = repository.findById(person.id!!)
             .orElseThrow({ ResourceNotFoundException("No records found for this ID") })
 
-        entity.setFirstName(person.getFirstName())
-        entity.setLastName(person.getLastName())
-        entity.setAddress(person.getAddress())
-        entity.setGender(person.getGender())
+        entity.firstName = person.firstName
+        entity.lastName = person.lastName
+        entity.address = person.address
+        entity.gender = person.gender
 
         return repository.save(entity)
     }
 
-    fun delete(id: kotlin.Long?) {
-        val entity: Person? = repository.findById(id)
+    fun delete(id: Long) {
+        val entity: Person = repository.findById(id)
             .orElseThrow({ ResourceNotFoundException("No records found for this ID") })
         repository.delete(entity)
     }
