@@ -14,13 +14,12 @@ class PersonServices {
     private lateinit var repository: PersonRepository
 
     fun create(person: Person): Person = repository.save(person)
-
-
-    fun findAll(): kotlin.collections.MutableList<Person?> {
+    
+    fun findAll(): List<Person?> {
         return repository.findAll()
     }
 
-    fun findById(id: kotlin.Long): Person {
+    fun findById(id: Long): Person {
         return repository.findById(id)
             .orElseThrow({ ResourceNotFoundException("No records found for this ID") })
     }
